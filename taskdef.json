@@ -1,0 +1,35 @@
+{
+  "executionRoleArn": "ecsTaskRoleExecOutput",
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "awslogs-SampleApplication",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "SampleApplication"
+        }
+      },
+      "entryPoint": [],
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "protocol": "tcp",
+          "containerPort": 8080
+        }
+      ],
+      "cpu": 512,
+      "image": "<IMAGE_NAME>",
+      "name": "SampleApplication"
+    }
+  ],
+  "memory": "1024",
+  "compatibilities": ["EC2", "FARGATE"],
+  "family": "SampleApplication",
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "512",
+  "revision": 1,
+  "status": "ACTIVE",
+  "volumes": []
+}
